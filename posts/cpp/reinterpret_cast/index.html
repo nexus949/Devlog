@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Reinterpret_Cast | Devlog</title>
+<meta name="keywords" content="C&#43;&#43;">
+<meta name="description" content="What is reinterpret cast&lt;&gt; ?
+Just like type casting (char)int, which reinterprets the value numerically here:
+int x = 65;
+std::cout &lt;&lt; (char)x &lt;&lt; std::endl; //prints character &#39;A&#39; as 65 is the ascii code for &#39;A&#39;.
+
+//OR
+
+std::cout &lt;&lt; static_cast&lt;char&gt;(x) &lt;&lt; std::endl; //C&#43;&#43; style
+Similarly reinterpret casts works on pointers !
+Specific type of pointers can read specific type of data. Means a int pointer will read 4 bytes of data at a time whereas a char pointer reads 1 byte of data at a time.">
+<meta name="author" content="">
+<link rel="canonical" href="https://nexus949.github.io/Devlog/posts/cpp/reinterpret_cast/">
+<link crossorigin="anonymous" href="/Devlog/assets/css/stylesheet.653123a0ea74d41f2a457a31eed7257fccf817e8ddcf5292b9fe4995fc5d3f44.css" integrity="" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://nexus949.github.io/Devlog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://nexus949.github.io/Devlog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://nexus949.github.io/Devlog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://nexus949.github.io/Devlog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://nexus949.github.io/Devlog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://nexus949.github.io/Devlog/posts/cpp/reinterpret_cast/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://nexus949.github.io/Devlog/posts/cpp/reinterpret_cast/">
+  <meta property="og:site_name" content="Devlog">
+  <meta property="og:title" content="Reinterpret_Cast">
+  <meta property="og:description" content="What is reinterpret cast&lt;&gt; ? Just like type casting (char)int, which reinterprets the value numerically here:
+int x = 65; std::cout &lt;&lt; (char)x &lt;&lt; std::endl; //prints character &#39;A&#39; as 65 is the ascii code for &#39;A&#39;. //OR std::cout &lt;&lt; static_cast&lt;char&gt;(x) &lt;&lt; std::endl; //C&#43;&#43; style Similarly reinterpret casts works on pointers !
+Specific type of pointers can read specific type of data. Means a int pointer will read 4 bytes of data at a time whereas a char pointer reads 1 byte of data at a time.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-07-05T17:56:32+05:30">
+    <meta property="article:modified_time" content="2025-07-05T17:56:32+05:30">
+    <meta property="article:tag" content="C&#43;&#43;">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Reinterpret_Cast">
+<meta name="twitter:description" content="What is reinterpret cast&lt;&gt; ?
+Just like type casting (char)int, which reinterprets the value numerically here:
+int x = 65;
+std::cout &lt;&lt; (char)x &lt;&lt; std::endl; //prints character &#39;A&#39; as 65 is the ascii code for &#39;A&#39;.
+
+//OR
+
+std::cout &lt;&lt; static_cast&lt;char&gt;(x) &lt;&lt; std::endl; //C&#43;&#43; style
+Similarly reinterpret casts works on pointers !
+Specific type of pointers can read specific type of data. Means a int pointer will read 4 bytes of data at a time whereas a char pointer reads 1 byte of data at a time.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://nexus949.github.io/Devlog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Reinterpret_Cast",
+      "item": "https://nexus949.github.io/Devlog/posts/cpp/reinterpret_cast/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Reinterpret_Cast",
+  "name": "Reinterpret_Cast",
+  "description": "What is reinterpret cast\u0026lt;\u0026gt; ? Just like type casting (char)int, which reinterprets the value numerically here:\nint x = 65; std::cout \u0026lt;\u0026lt; (char)x \u0026lt;\u0026lt; std::endl; //prints character \u0026#39;A\u0026#39; as 65 is the ascii code for \u0026#39;A\u0026#39;. //OR std::cout \u0026lt;\u0026lt; static_cast\u0026lt;char\u0026gt;(x) \u0026lt;\u0026lt; std::endl; //C++ style Similarly reinterpret casts works on pointers !\nSpecific type of pointers can read specific type of data. Means a int pointer will read 4 bytes of data at a time whereas a char pointer reads 1 byte of data at a time.\n",
+  "keywords": [
+    "C++"
+  ],
+  "articleBody": "What is reinterpret cast\u003c\u003e ? Just like type casting (char)int, which reinterprets the value numerically here:\nint x = 65; std::cout \u003c\u003c (char)x \u003c\u003c std::endl; //prints character 'A' as 65 is the ascii code for 'A'. //OR std::cout \u003c\u003c static_cast\u003cchar\u003e(x) \u003c\u003c std::endl; //C++ style Similarly reinterpret casts works on pointers !\nSpecific type of pointers can read specific type of data. Means a int pointer will read 4 bytes of data at a time whereas a char pointer reads 1 byte of data at a time.\nreinterpret cast allows us to change this behavior.\nint x = 54; int* ptr = \u0026x std::cout \u003c\u003c *ptr \u003c\u003c std::endl; //reads 4 bytes of data at a time char* c_ptr = reinterpret_cast\u003cchar*\u003e(\u0026x); //reinterpret it to view the address as a char pointer instead of a int pointer std::cout \u003c\u003c *c_ptr \u003c\u003c std::endl; //reads only 1 byte at a time, and if printed as a character, shows the ASCII equivalent. reinterpreting a int* as a char* changes it behavior, It does not changes the actual byte and data but the pointer type and how we can access it changes. A int* can read 4 bytes at a time that’s its natural behavior, and a char* reads only 1 byte so reinterpreting allows use to view the 4 bytes as 1 byte chunks.\nUsing the [] operator We can use the [] operator to access the different bytes just as in arrays.\nint x = 54; int* ptr = \u0026x std::cout \u003c\u003c *ptr \u003c\u003c std::endl; //reads 4 bytes of data at a time char* c_ptr = reinterpret_cast\u003cchar*\u003e(\u0026x); //reinterpret it to view the address as a char pointer instead of a int pointer for(int x = 0; x \u003c 4; x++){ //runs 4 times because a int is 4 bytes. std::cout \u003c\u003c c_ptr[x] \u003c\u003c std::endl; } How does this work ? A int is 4 bytes of memory but reinterpreting it as a char*, we can only view 1 byte at a time (because a char is 1 byte and so a char* behaves the same way - reading only a byte at a time). Therefore to read all the 4 bytes we need to access the 4 indexes, therefore we can use the [] operator to access the locations.\nint -\u003e 64; broken into 4 bytes -\u003e 0x00 0x00 0x00 0x40 int -\u003e byte1(0x40) ~ byte2(0x00) ~ byte3(0x00) ~ byte4(0x00) #follows little endian char* -\u003e [0]read^ reads 1 byte at a time! Unlike int which reads 4 bytes a time So, c_ptr[0] = first byte(0x40), #\u003c- LSB c_ptr[1] = second byte(0x00), c_ptr[2] = third byte(0x00), c_ptr[3] = fourth byte(0x00) #\u003c- MSB Why does it work ? int, char, float, etc. are just raw bytes with custom read and write rules like an int will be 4 bytes and it will only contain numbers, not characters or any other data, only numbers without decimals and same idea for other datatypes ! And their corresponding pointers behave the same way - a int* will always read 4 bytes and a char* will always read 1 byte.\nreinterpret_cast\u003c\u003e tells the compiler: “Treat this block of memory as if it belongs to a different type, without changing the actual bytes.”\nreinterpret_cast\u003c\u003e just lets us change that behavior, change the way we are accessing raw bytes, to view a type x memory as a type y pointer ! Its extremely dangerous as its very much prone to reading or writing in restricted or out of bounds memory.\nNow, in C/C++ arrays decay to pointers to the first element when passed into expressions or functions (sizeof(arr) or \u0026arr wont decay). Means we can do this:\nint arr[] = { 11, 22, 33, 44, 55 }; std::cout \u003c\u003c *arr \u003c\u003c std::endl; OR\nint arr[] = { 11, 22, 33, 44, 55 }; std::cout \u003c\u003c *(arr + 1) \u003c\u003c std::endl; //access element at index 1 OR\nint arr[] = { 11, 22, 33, 44, 55 }; std::cout \u003c\u003c arr[1] \u003c\u003c std::endl; //access element at index 1 its just basic pointer arithmetic and dereferencing ! Its just pointer + index which is written as pointer[index] !\nIts basic math ! a + b = b + a =\u003e pointer + index = index + pointer =\u003e pointer[index] = index[pointer]\nAND THATS WHY THIS WORKS TOO:\nint arr[] = { 11, 22, 33, 44, 55 }; std::cout \u003c\u003c 2[arr] \u003c\u003c std::endl; //same as arr[2] ! Printing values after using reinterpret_cast\u003c\u003e int x = 64; int* ptr = \u0026x std::cout \u003c\u003c *ptr \u003c\u003c std::endl; //reads 4 bytes of data at a time char* c_ptr = reinterpret_cast\u003cchar*\u003e(\u0026x); //reinterpret it to view the address as a char pointer instead of a int pointer for(int x = 0; x \u003c 4; x++){ std::cout \u003c\u003c c_ptr[x] \u003c\u003c std::endl; } /* OUTPUT: @ //non printable character //non printable character //non printable character */ WHY IS THE OUTPUT LIKE THAT ?\n64 is an int, 64 in hex-\u003e 0x00000040 Follows little endian format where the LSB is taken in account first.\nSo the bytes are:\nbyte 1 = 0x40, byte 2 = 0x00, byte 3 = 0x00, byte 4 = 0x00\n0x40 represented as a char is the character ‘@’ ! Therefore we get the ‘@’ and followed by 0x00 which represents NUL character in ASCII, which is not printable therefore the blank spaces !\nSee how it behaves like a character just how doing (char)int would do ! Means even casting the pointer to a different type changes it behavior on how its read and displayed !\nDangers Using reinterpret_cast\u003c\u003e Dangers using reinterpret_cast\n",
+  "wordCount" : "922",
+  "inLanguage": "en",
+  "datePublished": "2025-07-05T17:56:32+05:30",
+  "dateModified": "2025-07-05T17:56:32+05:30",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://nexus949.github.io/Devlog/posts/cpp/reinterpret_cast/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Devlog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://nexus949.github.io/Devlog/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://nexus949.github.io/Devlog/" accesskey="h" title="Devlog (Alt + H)">Devlog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://github.com/nexus949" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://nexus949.github.io/Devlog/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Reinterpret_Cast
+    </h1>
+    <div class="post-meta"><span title='2025-07-05 17:56:32 +0530 IST'>July 5, 2025</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="what-is-reinterpret-cast-">What is <code>reinterpret cast&lt;&gt;</code> ?<a hidden class="anchor" aria-hidden="true" href="#what-is-reinterpret-cast-">#</a></h2>
+<p>Just like type casting <code>(char)int</code>, which reinterprets the value numerically here:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">65</span>;
+</span></span><span style="display:flex;"><span>std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> (<span style="color:#66d9ef">char</span>)x <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl; <span style="color:#75715e">//prints character &#39;A&#39; as 65 is the ascii code for &#39;A&#39;.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//OR
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#66d9ef">static_cast</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">char</span><span style="color:#f92672">&gt;</span>(x) <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl; <span style="color:#75715e">//C++ style
+</span></span></span></code></pre></div><p><em><strong>Similarly reinterpret casts works on pointers !</strong></em></p>
+<p>Specific type of pointers can read specific type of data. Means a <code>int</code> pointer will read <code>4 bytes</code> of data at a time whereas a <code>char</code> pointer reads <code>1 byte</code> of data at a time.</p>
+<p>reinterpret cast allows us to change this behavior.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">54</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> ptr <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">*</span>ptr <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl; <span style="color:#75715e">//reads 4 bytes of data at a time
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> c_ptr <span style="color:#f92672">=</span> <span style="color:#66d9ef">reinterpret_cast</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">char</span><span style="color:#f92672">*&gt;</span>(<span style="color:#f92672">&amp;</span>x); <span style="color:#75715e">//reinterpret it to view the address as a char pointer instead of a int pointer
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">*</span>c_ptr <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl; <span style="color:#75715e">//reads only 1 byte at a time, and if printed as a character, shows the ASCII equivalent.
+</span></span></span></code></pre></div><p>reinterpreting a <code>int*</code> as a <code>char*</code> changes it behavior, It does not changes the actual byte and data but the pointer type and how we can access it changes. A <code>int*</code> can read <code>4 bytes</code> at a time that&rsquo;s its natural behavior, and a <code>char*</code> reads only <code>1 byte</code> so reinterpreting allows use to view the <code>4 bytes</code> as <code>1 byte</code> chunks.</p>
+<hr>
+<h3 id="using-the--operator">Using the <code>[]</code> operator<a hidden class="anchor" aria-hidden="true" href="#using-the--operator">#</a></h3>
+<p>We can use the <code>[]</code> operator to access the different bytes just as in arrays.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">54</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> ptr <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">*</span>ptr <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl; <span style="color:#75715e">//reads 4 bytes of data at a time
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> c_ptr <span style="color:#f92672">=</span> <span style="color:#66d9ef">reinterpret_cast</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">char</span><span style="color:#f92672">*&gt;</span>(<span style="color:#f92672">&amp;</span>x); <span style="color:#75715e">//reinterpret it to view the address as a char pointer instead of a int pointer
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; x <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">4</span>; x<span style="color:#f92672">++</span>){ <span style="color:#75715e">//runs 4 times because a int is 4 bytes.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> c_ptr[x] <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="how-does-this-work-">How does this work ?<a hidden class="anchor" aria-hidden="true" href="#how-does-this-work-">#</a></h3>
+<p>A <code>int</code> is <code>4 bytes</code> of memory but reinterpreting it as a <code>char*</code>, we can only view 1 byte at a time (because a <code>char</code> is <code>1 byte</code> and so a <code>char*</code> behaves the same way - reading only a byte at a time). Therefore to read all the <code>4 bytes</code> we need to access the 4 <code>indexes</code>, therefore we can use the <code>[]</code> operator to access the locations.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>int -&gt; 64;
+</span></span><span style="display:flex;"><span>broken into <span style="color:#ae81ff">4</span> bytes -&gt; 0x00 0x00 0x00 0x40
+</span></span><span style="display:flex;"><span>int -&gt; byte1<span style="color:#f92672">(</span>0x40<span style="color:#f92672">)</span> ~ byte2<span style="color:#f92672">(</span>0x00<span style="color:#f92672">)</span> ~ byte3<span style="color:#f92672">(</span>0x00<span style="color:#f92672">)</span> ~ byte4<span style="color:#f92672">(</span>0x00<span style="color:#f92672">)</span> <span style="color:#75715e">#follows little endian</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>char* -&gt; <span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>read^
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>reads <span style="color:#ae81ff">1</span> byte at a time! Unlike int which reads <span style="color:#ae81ff">4</span> bytes a time
+</span></span><span style="display:flex;"><span>So,
+</span></span><span style="display:flex;"><span>c_ptr<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> first byte<span style="color:#f92672">(</span>0x40<span style="color:#f92672">)</span>, <span style="color:#75715e">#&lt;- LSB</span>
+</span></span><span style="display:flex;"><span>c_ptr<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> second byte<span style="color:#f92672">(</span>0x00<span style="color:#f92672">)</span>,
+</span></span><span style="display:flex;"><span>c_ptr<span style="color:#f92672">[</span>2<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> third byte<span style="color:#f92672">(</span>0x00<span style="color:#f92672">)</span>,
+</span></span><span style="display:flex;"><span>c_ptr<span style="color:#f92672">[</span>3<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> fourth byte<span style="color:#f92672">(</span>0x00<span style="color:#f92672">)</span> <span style="color:#75715e">#&lt;- MSB</span>
+</span></span></code></pre></div><h3 id="why-does-it-work-">Why does it work ?<a hidden class="anchor" aria-hidden="true" href="#why-does-it-work-">#</a></h3>
+<p><code>int</code>, <code>char</code>, <code>float</code>, etc. are just raw bytes with custom read and write rules like an <code>int</code> will be 4 bytes and it will only contain numbers, not characters or any other data, only numbers without decimals and same idea for other datatypes ! And their corresponding pointers behave the same way - a <code>int*</code> will always read <code>4 bytes</code> and a <code>char*</code> will always read <code>1 byte</code>.</p>
+<p><code>reinterpret_cast&lt;&gt;</code> tells the compiler:
+“Treat this block of memory as if it belongs to a different type, without changing the actual bytes.”</p>
+<p><code>reinterpret_cast&lt;&gt;</code> just lets us change that behavior, change the way we are accessing raw bytes, to view a type <code>x</code> memory as a type <code>y</code> pointer ! Its extremely dangerous as its very much prone to reading or writing in restricted or out of bounds memory.</p>
+<p>Now, in C/C++ arrays decay to pointers to the first element when passed into expressions or functions (<code>sizeof(arr)</code> or <code>&amp;arr</code> wont decay). Means we can do this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> arr[] <span style="color:#f92672">=</span> { <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">22</span>, <span style="color:#ae81ff">33</span>, <span style="color:#ae81ff">44</span>, <span style="color:#ae81ff">55</span> };
+</span></span><span style="display:flex;"><span>std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">*</span>arr <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span></code></pre></div><p>OR</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> arr[] <span style="color:#f92672">=</span> { <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">22</span>, <span style="color:#ae81ff">33</span>, <span style="color:#ae81ff">44</span>, <span style="color:#ae81ff">55</span> };
+</span></span><span style="display:flex;"><span>std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">*</span>(arr <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl; <span style="color:#75715e">//access element at index 1
+</span></span></span></code></pre></div><p>OR</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> arr[] <span style="color:#f92672">=</span> { <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">22</span>, <span style="color:#ae81ff">33</span>, <span style="color:#ae81ff">44</span>, <span style="color:#ae81ff">55</span> };
+</span></span><span style="display:flex;"><span>std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> arr[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl; <span style="color:#75715e">//access element at index 1
+</span></span></span></code></pre></div><p>its just basic pointer arithmetic and dereferencing !
+Its just <code>pointer + index</code> which is written as <code>pointer[index]</code> !</p>
+<p><strong>Its basic math !</strong>
+<code>a + b = b + a</code>
+=&gt; <code>pointer + index = index + pointer</code>
+=&gt; <code>pointer[index] = index[pointer]</code></p>
+<p><strong>AND THATS WHY THIS WORKS TOO:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> arr[] <span style="color:#f92672">=</span> { <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">22</span>, <span style="color:#ae81ff">33</span>, <span style="color:#ae81ff">44</span>, <span style="color:#ae81ff">55</span> };
+</span></span><span style="display:flex;"><span>std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">2</span>[arr] <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl; <span style="color:#75715e">//same as arr[2] !
+</span></span></span></code></pre></div><hr>
+<h3 id="printing-values-after-using-reinterpret_cast">Printing values after using <code>reinterpret_cast&lt;&gt;</code><a hidden class="anchor" aria-hidden="true" href="#printing-values-after-using-reinterpret_cast">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">64</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> ptr <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">*</span>ptr <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl; <span style="color:#75715e">//reads 4 bytes of data at a time
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> c_ptr <span style="color:#f92672">=</span> <span style="color:#66d9ef">reinterpret_cast</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">char</span><span style="color:#f92672">*&gt;</span>(<span style="color:#f92672">&amp;</span>x); <span style="color:#75715e">//reinterpret it to view the address as a char pointer instead of a int pointer
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; x <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">4</span>; x<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>	std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> c_ptr[x] <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">OUTPUT:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">@
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">				//non printable character
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">				//non printable character
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">				//non printable character
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span></code></pre></div><p><strong>WHY IS THE OUTPUT LIKE THAT ?</strong></p>
+<p>64 is an <code>int</code>,
+64 in <code>hex</code>-&gt; <code>0x00000040</code>
+Follows little endian format where the <code>LSB</code> is taken in account first.</p>
+<p>So the bytes are:</p>
+<p>byte 1 = <code>0x40</code>,
+byte 2 = <code>0x00</code>,
+byte 3 = <code>0x00</code>,
+byte 4 = <code>0x00</code></p>
+<p><code>0x40</code> represented as a <code>char</code> is the character  &lsquo;<code>@</code>&rsquo; ! Therefore we get the &lsquo;<code>@</code>&rsquo; and followed by <code>0x00</code> which represents <code>NUL</code> character in ASCII, which is not printable therefore the blank spaces !</p>
+<p>See how it behaves like a character just how doing <code>(char)int</code> would do ! Means even casting the pointer to a different type changes it behavior on how its read and displayed !</p>
+<hr>
+<h3 id="dangers-using-reinterpret_cast">Dangers Using <code>reinterpret_cast&lt;&gt;</code><a hidden class="anchor" aria-hidden="true" href="#dangers-using-reinterpret_cast">#</a></h3>
+<p><a href="https://nexus949.github.io/Devlog/posts/cpp/dangers-using-reinterpret_cast">Dangers using reinterpret_cast</a></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://nexus949.github.io/Devlog/tags/c&#43;&#43;/">C&#43;&#43;</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://nexus949.github.io/Devlog/">Devlog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

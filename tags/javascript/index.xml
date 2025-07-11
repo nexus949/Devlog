@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>JavaScript on Devlog</title>
+    <link>https://nexus949.github.io/Devlog/tags/javascript/</link>
+    <description>Recent content in JavaScript on Devlog</description>
+    <generator>Hugo -- 0.147.9</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Jul 2025 00:16:31 +0530</lastBuildDate>
+    <atom:link href="https://nexus949.github.io/Devlog/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Javascript Functions</title>
+      <link>https://nexus949.github.io/Devlog/posts/javascript/javascript-functions/</link>
+      <pubDate>Sat, 12 Jul 2025 00:16:31 +0530</pubDate>
+      <guid>https://nexus949.github.io/Devlog/posts/javascript/javascript-functions/</guid>
+      <description>&lt;p&gt;YEP ! Good &amp;lsquo;ol Functions, very familiar, exists in all programming languages (or does it ?).
+Now JS does not have one single way of writing functions, it has a whole arsenal of them, lets see each of them one by one.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;The standard way:&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;greet&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;`Hello, &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;greet&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Nexus&amp;#34;&lt;/span&gt;); &lt;span style=&#34;color:#75715e&#34;&gt;//prints &amp;#34;Hello, Nexus&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The very basic and old school way of writing functions, totally understandable and good to work with.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Array Functions</title>
+      <link>https://nexus949.github.io/Devlog/posts/javascript/array-functions/</link>
+      <pubDate>Fri, 11 Jul 2025 23:50:37 +0530</pubDate>
+      <guid>https://nexus949.github.io/Devlog/posts/javascript/array-functions/</guid>
+      <description>&lt;p&gt;We will see the 3 to 5 frequently used array functions in JavaScript.&lt;/p&gt;
+&lt;p&gt;Now why did I list these in quirks ?&lt;/p&gt;
+&lt;p&gt;I personally say that JavaScript is very quirky and I don&amp;rsquo;t use this functions often as I don&amp;rsquo;t like to remember stuff and I never understood how exactly some of them works. On a standard POV this is necessary but I will still say these are quirky ways of writing a loop !&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript Quirks</title>
+      <link>https://nexus949.github.io/Devlog/posts/javascript/javascript-quirks/</link>
+      <pubDate>Fri, 11 Jul 2025 23:47:38 +0530</pubDate>
+      <guid>https://nexus949.github.io/Devlog/posts/javascript/javascript-quirks/</guid>
+      <description>&lt;p&gt;Now Decided to make a log on JavaScript after messing up a Job selection assessment.&lt;/p&gt;
+&lt;p&gt;JavaScript in itself is the most weird and &amp;ldquo;bad&amp;rdquo; language I&amp;rsquo;ve ever coded in, Its loosely typed and has many funky quirks that I absolutely don&amp;rsquo;t like or use often in my code. But these funky quirks or writing styles are needed for stuff like interviews or codebases that implement these methods of writing.&lt;/p&gt;
+&lt;p&gt;For the context of this Log or any other log tagged/linked to it, I will mention these as &lt;em&gt;&lt;strong&gt;&amp;ldquo;QUIRKS&amp;rdquo;&lt;/strong&gt;&lt;/em&gt;  !&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

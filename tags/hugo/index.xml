@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Hugo on Devlog</title>
+    <link>https://nexus949.github.io/Devlog/tags/hugo/</link>
+    <description>Recent content in Hugo on Devlog</description>
+    <generator>Hugo -- 0.147.9</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 06 Jul 2025 22:08:37 +0530</lastBuildDate>
+    <atom:link href="https://nexus949.github.io/Devlog/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo &#43; Github Pages 😵</title>
+      <link>https://nexus949.github.io/Devlog/posts/hugo/hugo_plus_github_pages/</link>
+      <pubDate>Sun, 06 Jul 2025 22:08:37 +0530</pubDate>
+      <guid>https://nexus949.github.io/Devlog/posts/hugo/hugo_plus_github_pages/</guid>
+      <description>&lt;p&gt;Ah this was one of the most annoying things, I encountered this week !&lt;/p&gt;
+&lt;p&gt;Hosting Static Sites on &lt;a href=&#34;https://pages.github.com/&#34;&gt;Github Pages&lt;/a&gt; should be easy and it is, I&amp;rsquo;ve used it before too and its one of the best hosting medium !&lt;/p&gt;
+&lt;p&gt;BUT&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Using HUGO to generate a static site and host it on Github Pages was pretty annoying.&lt;/p&gt;
+&lt;p&gt;It was very easy on the development side of things, deployment was the opposite but got it sorted it. Using &lt;code&gt;hugo --ignoreCache -t PaperMod&lt;/code&gt; built a &lt;code&gt;public/&lt;/code&gt; directory where the static site was generated and pushing it the remote repo and hosting would have done the job but for some reason the CSS and JS was not loading what so ever. It was &lt;strong&gt;HTML ONLY !&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>https://nexus949.github.io/Devlog/posts/hugo/hugo/</link>
+      <pubDate>Sun, 06 Jul 2025 13:36:01 +0530</pubDate>
+      <guid>https://nexus949.github.io/Devlog/posts/hugo/hugo/</guid>
+      <description>&lt;p&gt;Well Yesterday I found out &lt;a href=&#34;https://gohugo.io/&#34;&gt;HUGO&lt;/a&gt; and static site generation. Now I was thinking to host my notes like this and code and stuff as a &lt;strong&gt;DEVLOG&lt;/strong&gt; but doing frontend burns the hell outta me. So I discovered &lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; but then understood I needed Ruby installed in Order to use Jekyll !&lt;/p&gt;
+&lt;p&gt;So exploring further I found out Hugo and how I don&amp;rsquo;t need Ruby installed but obviously had to install Hugo.&lt;/p&gt;
+&lt;p&gt;Seeing how crazy good it was I was &lt;strong&gt;Seriously impressed !&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

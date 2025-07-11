@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Devlog</title>
+    <link>https://nexus949.github.io/Devlog/</link>
+    <description>Recent content on Devlog</description>
+    <generator>Hugo -- 0.147.9</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Jul 2025 00:16:31 +0530</lastBuildDate>
+    <atom:link href="https://nexus949.github.io/Devlog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Javascript Functions</title>
+      <link>https://nexus949.github.io/Devlog/posts/javascript/javascript-functions/</link>
+      <pubDate>Sat, 12 Jul 2025 00:16:31 +0530</pubDate>
+      <guid>https://nexus949.github.io/Devlog/posts/javascript/javascript-functions/</guid>
+      <description>&lt;p&gt;YEP ! Good &amp;lsquo;ol Functions, very familiar, exists in all programming languages (or does it ?).
+Now JS does not have one single way of writing functions, it has a whole arsenal of them, lets see each of them one by one.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;The standard way:&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;greet&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;`Hello, &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;greet&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Nexus&amp;#34;&lt;/span&gt;); &lt;span style=&#34;color:#75715e&#34;&gt;//prints &amp;#34;Hello, Nexus&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The very basic and old school way of writing functions, totally understandable and good to work with.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Array Functions</title>
+      <link>https://nexus949.github.io/Devlog/posts/javascript/array-functions/</link>
+      <pubDate>Fri, 11 Jul 2025 23:50:37 +0530</pubDate>
+      <guid>https://nexus949.github.io/Devlog/posts/javascript/array-functions/</guid>
+      <description>&lt;p&gt;We will see the 3 to 5 frequently used array functions in JavaScript.&lt;/p&gt;
+&lt;p&gt;Now why did I list these in quirks ?&lt;/p&gt;
+&lt;p&gt;I personally say that JavaScript is very quirky and I don&amp;rsquo;t use this functions often as I don&amp;rsquo;t like to remember stuff and I never understood how exactly some of them works. On a standard POV this is necessary but I will still say these are quirky ways of writing a loop !&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript Quirks</title>
+      <link>https://nexus949.github.io/Devlog/posts/javascript/javascript-quirks/</link>
+      <pubDate>Fri, 11 Jul 2025 23:47:38 +0530</pubDate>
+      <guid>https://nexus949.github.io/Devlog/posts/javascript/javascript-quirks/</guid>
+      <description>&lt;p&gt;Now Decided to make a log on JavaScript after messing up a Job selection assessment.&lt;/p&gt;
+&lt;p&gt;JavaScript in itself is the most weird and &amp;ldquo;bad&amp;rdquo; language I&amp;rsquo;ve ever coded in, Its loosely typed and has many funky quirks that I absolutely don&amp;rsquo;t like or use often in my code. But these funky quirks or writing styles are needed for stuff like interviews or codebases that implement these methods of writing.&lt;/p&gt;
+&lt;p&gt;For the context of this Log or any other log tagged/linked to it, I will mention these as &lt;em&gt;&lt;strong&gt;&amp;ldquo;QUIRKS&amp;rdquo;&lt;/strong&gt;&lt;/em&gt;  !&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hugo &#43; Github Pages 😵</title>
+      <link>https://nexus949.github.io/Devlog/posts/hugo/hugo_plus_github_pages/</link>
+      <pubDate>Sun, 06 Jul 2025 22:08:37 +0530</pubDate>
+      <guid>https://nexus949.github.io/Devlog/posts/hugo/hugo_plus_github_pages/</guid>
+      <description>&lt;p&gt;Ah this was one of the most annoying things, I encountered this week !&lt;/p&gt;
+&lt;p&gt;Hosting Static Sites on &lt;a href=&#34;https://pages.github.com/&#34;&gt;Github Pages&lt;/a&gt; should be easy and it is, I&amp;rsquo;ve used it before too and its one of the best hosting medium !&lt;/p&gt;
+&lt;p&gt;BUT&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Using HUGO to generate a static site and host it on Github Pages was pretty annoying.&lt;/p&gt;
+&lt;p&gt;It was very easy on the development side of things, deployment was the opposite but got it sorted it. Using &lt;code&gt;hugo --ignoreCache -t PaperMod&lt;/code&gt; built a &lt;code&gt;public/&lt;/code&gt; directory where the static site was generated and pushing it the remote repo and hosting would have done the job but for some reason the CSS and JS was not loading what so ever. It was &lt;strong&gt;HTML ONLY !&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>https://nexus949.github.io/Devlog/posts/hugo/hugo/</link>
+      <pubDate>Sun, 06 Jul 2025 13:36:01 +0530</pubDate>
+      <guid>https://nexus949.github.io/Devlog/posts/hugo/hugo/</guid>
+      <description>&lt;p&gt;Well Yesterday I found out &lt;a href=&#34;https://gohugo.io/&#34;&gt;HUGO&lt;/a&gt; and static site generation. Now I was thinking to host my notes like this and code and stuff as a &lt;strong&gt;DEVLOG&lt;/strong&gt; but doing frontend burns the hell outta me. So I discovered &lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; but then understood I needed Ruby installed in Order to use Jekyll !&lt;/p&gt;
+&lt;p&gt;So exploring further I found out Hugo and how I don&amp;rsquo;t need Ruby installed but obviously had to install Hugo.&lt;/p&gt;
+&lt;p&gt;Seeing how crazy good it was I was &lt;strong&gt;Seriously impressed !&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Negatives and Complements</title>
+      <link>https://nexus949.github.io/Devlog/posts/cpp/negatives-and-complements/</link>
+      <pubDate>Sat, 05 Jul 2025 17:57:22 +0530</pubDate>
+      <guid>https://nexus949.github.io/Devlog/posts/cpp/negatives-and-complements/</guid>
+      <description>&lt;h2 id=&#34;what-are-complements-&#34;&gt;What are complements ?&lt;/h2&gt;
+&lt;p&gt;Complements are way to store negative numbers and manipulate them in binary.&lt;/p&gt;
+&lt;h3 id=&#34;why-complements-&#34;&gt;Why complements ?&lt;/h3&gt;
+&lt;p&gt;Representing negative numbers in binary was a real hassle ! That&amp;rsquo;s were complements help to store signed numbers as binary.&lt;/p&gt;
+&lt;p&gt;But it was not always like that.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;1-sign-magnitude&#34;&gt;1. Sign-Magnitude&lt;/h3&gt;
+&lt;p&gt;First idea of representing signs:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;0&lt;/code&gt; = &lt;code&gt;+&lt;/code&gt; and &lt;code&gt;1&lt;/code&gt; = &lt;code&gt;-&lt;/code&gt;, followed by the number in binary !&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;00000101 = 5&lt;/code&gt;
+&lt;code&gt;10000101 = -5&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Dangers Using Reinterpret_cast</title>
+      <link>https://nexus949.github.io/Devlog/posts/cpp/dangers-using-reinterpret_cast/</link>
+      <pubDate>Sat, 05 Jul 2025 17:57:07 +0530</pubDate>
+      <guid>https://nexus949.github.io/Devlog/posts/cpp/dangers-using-reinterpret_cast/</guid>
+      <description>&lt;p&gt;Several dangers using &lt;code&gt;reinterpret_cast&amp;lt;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;reinterpreting-smaller-data-pointer-to-bigger-data-pointers&#34;&gt;Reinterpreting smaller data pointer to bigger data pointers&lt;/h4&gt;
+&lt;p&gt;Reinterpreting pointers of smaller data like &lt;code&gt;char&lt;/code&gt; to a pointer of bigger data like &lt;code&gt;int&lt;/code&gt; will cause issues like reading from unreserved memory, reading garbage values and other &amp;ldquo;bad&amp;rdquo; stuff.&lt;/p&gt;
+&lt;p&gt;For example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; ch &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; c_ptr &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;ch;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; i_ptr &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;reinterpret_cast&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&amp;gt;&lt;/span&gt;(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;ch); &lt;span style=&#34;color:#75715e&#34;&gt;//this is &amp;#34;BAD&amp;#34; ❌
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;cout &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;i_ptr &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;endl;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//ch is 1 byte but trying to access it using a int* will read 4 bytes and even though the whole thing will contain our char it will still have garbage values.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//int is 4 bytes so,
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//byte1(our character) ~ byte2(??) ~ byte3(??) ~ byte4(??)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// read^(*i_ptr)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;does-the-garbage-value-contain-our-character-&#34;&gt;Does the garbage value contain our character ?&lt;/h4&gt;
+&lt;p&gt;YES ! It will !&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Reinterpret_Cast</title>
+      <link>https://nexus949.github.io/Devlog/posts/cpp/reinterpret_cast/</link>
+      <pubDate>Sat, 05 Jul 2025 17:56:32 +0530</pubDate>
+      <guid>https://nexus949.github.io/Devlog/posts/cpp/reinterpret_cast/</guid>
+      <description>&lt;h2 id=&#34;what-is-reinterpret-cast-&#34;&gt;What is &lt;code&gt;reinterpret cast&amp;lt;&amp;gt;&lt;/code&gt; ?&lt;/h2&gt;
+&lt;p&gt;Just like type casting &lt;code&gt;(char)int&lt;/code&gt;, which reinterprets the value numerically here:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;65&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;cout &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt;)x &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;endl; &lt;span style=&#34;color:#75715e&#34;&gt;//prints character &amp;#39;A&amp;#39; as 65 is the ascii code for &amp;#39;A&amp;#39;.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//OR
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;cout &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static_cast&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;(x) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;endl; &lt;span style=&#34;color:#75715e&#34;&gt;//C++ style
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;&lt;strong&gt;Similarly reinterpret casts works on pointers !&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Specific type of pointers can read specific type of data. Means a &lt;code&gt;int&lt;/code&gt; pointer will read &lt;code&gt;4 bytes&lt;/code&gt; of data at a time whereas a &lt;code&gt;char&lt;/code&gt; pointer reads &lt;code&gt;1 byte&lt;/code&gt; of data at a time.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Deep understanding of Pointers and Pointer pitfall</title>
+      <link>https://nexus949.github.io/Devlog/posts/cpp/deep_understanding_of_pointers_and_pointer_pitfall/</link>
+      <pubDate>Sat, 05 Jul 2025 17:51:59 +0530</pubDate>
+      <guid>https://nexus949.github.io/Devlog/posts/cpp/deep_understanding_of_pointers_and_pointer_pitfall/</guid>
+      <description>&lt;h3 id=&#34;pointers-are-easy--or-are-they-&#34;&gt;Pointers are easy ? Or are they ?&lt;/h3&gt;
+&lt;p&gt;Pointers are pretty easy to use and understand unless we fall in deep dereferencing and more complex topics like array of pointers and multiple dereferences and incrementing or decrementing them.&lt;/p&gt;
+&lt;p&gt;Basic Pointer use:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; a &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; ptr &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;a;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;cout &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; a &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;endl; &lt;span style=&#34;color:#75715e&#34;&gt;//prints value of a
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;cout &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;a &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;endl; &lt;span style=&#34;color:#75715e&#34;&gt;//prints address of a
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;cout &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; ptr &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;endl; &lt;span style=&#34;color:#75715e&#34;&gt;//also prints address of a
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;cout &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;ptr &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;endl; &lt;span style=&#34;color:#75715e&#34;&gt;//prints value of a
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now lets go a little deep using pointer to a pointer.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
