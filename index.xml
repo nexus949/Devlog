@@ -6,8 +6,72 @@
     <description>Recent content on Devlog</description>
     <generator>Hugo -- 0.147.9</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Jul 2025 00:16:31 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 12 Jul 2025 15:16:37 +0530</lastBuildDate>
     <atom:link href="https://nexus949.github.io/Devlog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>var vs let vs const</title>
+      <link>https://nexus949.github.io/Devlog/posts/javascript/var_vs_let_vs_const/</link>
+      <pubDate>Sat, 12 Jul 2025 15:16:37 +0530</pubDate>
+      <guid>https://nexus949.github.io/Devlog/posts/javascript/var_vs_let_vs_const/</guid>
+      <description>&lt;p&gt;No fluff lets get directly into it !&lt;/p&gt;
+&lt;h4 id=&#34;var-vs-let-vs-const&#34;&gt;&lt;code&gt;var&lt;/code&gt; vs &lt;code&gt;let&lt;/code&gt; vs &lt;code&gt;const&lt;/code&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;declaration&#34;&gt;Declaration&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;var&lt;/code&gt; : Can be re-declared even after declaring it once !&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;let&lt;/code&gt; : Cannot be re-declared ! Only one declaration per block !&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;const&lt;/code&gt; : Same as &lt;code&gt;let&lt;/code&gt; !&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;mutability&#34;&gt;Mutability&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;var&lt;/code&gt; : Mutable. Means will let you change values of variables,&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;let&lt;/code&gt; : Mutable. Same as &lt;code&gt;var&lt;/code&gt; will let you change values of variables.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;const&lt;/code&gt; : Immutable. Won&amp;rsquo;t let you change values of variables declared using &lt;code&gt;const&lt;/code&gt; !&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;scopes&#34;&gt;Scopes&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;var&lt;/code&gt;: Function Scoped !&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;scopeOfVar&lt;/span&gt;(){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;scopeOfVar&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt;); &lt;span style=&#34;color:#75715e&#34;&gt;//ReferenceError: x is not defined
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;x&lt;/code&gt; is defined inside the function, hoisted to the top of the scope (the function in this case) and is not accessible outside of the function.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hoisting in Javascript</title>
+      <link>https://nexus949.github.io/Devlog/posts/javascript/hoisting-in-javascript/</link>
+      <pubDate>Sat, 12 Jul 2025 14:34:33 +0530</pubDate>
+      <guid>https://nexus949.github.io/Devlog/posts/javascript/hoisting-in-javascript/</guid>
+      <description>&lt;p&gt;Hoisting in JavaScript means that any declaration made, JavaScript will move them to the top of their scope before the code runs.&lt;/p&gt;
+&lt;h3 id=&#34;-two-types-of-hoisting-in-javascript&#34;&gt;📦 Two types of Hoisting in JavaScript&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;em&gt;Variable Hoisting :&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Lets see using examples:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt;); &lt;span style=&#34;color:#75715e&#34;&gt;//undefined
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt;); &lt;span style=&#34;color:#75715e&#34;&gt;//prints 8
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Instead of throwing an error it runs as &lt;code&gt;x&lt;/code&gt; is hoisted to the top of the scope therefore its not initialized before the code runs but its declared therefore &lt;code&gt;x&lt;/code&gt; is accessible. &lt;code&gt;x&lt;/code&gt; is initialized when the line &lt;code&gt;var x = 8&lt;/code&gt; is executed.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript Pitfalls</title>
+      <link>https://nexus949.github.io/Devlog/posts/javascript/js_pitfalls/</link>
+      <pubDate>Sat, 12 Jul 2025 14:28:16 +0530</pubDate>
+      <guid>https://nexus949.github.io/Devlog/posts/javascript/js_pitfalls/</guid>
+      <description>&lt;p&gt;We will see some other quirks and pitfalls here&lt;/p&gt;
+&lt;h3 id=&#34;object-object&#34;&gt;&lt;code&gt;[object Object]&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;We can get the &lt;code&gt;[object Object]&lt;/code&gt; if we try to console log a object while trying to concat a string with it.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;obj&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;val&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;32&lt;/span&gt; };
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;obj&lt;/span&gt;); &lt;span style=&#34;color:#75715e&#34;&gt;//prints { val: 32 }
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;obj&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;); &lt;span style=&#34;color:#75715e&#34;&gt;//prints [object Object]A
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Internally JS tries to convert &lt;code&gt;obj&lt;/code&gt; into a string by doing &lt;code&gt;obj.toString()&lt;/code&gt; resulting in &lt;code&gt;[object Object]&lt;/code&gt; !&lt;/p&gt;
+&lt;p&gt;Now what exactly does it mean ?&lt;/p&gt;
+&lt;p&gt;The first is &lt;code&gt;object&lt;/code&gt; (with a small &lt;code&gt;o&lt;/code&gt;), this shows the type tag. JavaScript by default tags every datatype as &lt;code&gt;object&lt;/code&gt;if its not a primitive type like &lt;code&gt;number&lt;/code&gt; or &lt;code&gt;string&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Javascript Functions</title>
       <link>https://nexus949.github.io/Devlog/posts/javascript/javascript-functions/</link>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>JavaScript Pitfalls | Devlog</title>
+<meta name="keywords" content="JavaScript, Quirky JS">
+<meta name="description" content="We will see some other quirks and pitfalls here
+[object Object]
+We can get the [object Object] if we try to console log a object while trying to concat a string with it.
+const obj = { val: 32 };
+
+console.log(obj); //prints { val: 32 }
+console.log(obj &#43; &#39;A&#39;); //prints [object Object]A
+Internally JS tries to convert obj into a string by doing obj.toString() resulting in [object Object] !
+Now what exactly does it mean ?
+The first is object (with a small o), this shows the type tag. JavaScript by default tags every datatype as objectif its not a primitive type like number or string.">
+<meta name="author" content="">
+<link rel="canonical" href="https://nexus949.github.io/Devlog/posts/javascript/js_pitfalls/">
+<link crossorigin="anonymous" href="/Devlog/assets/css/stylesheet.653123a0ea74d41f2a457a31eed7257fccf817e8ddcf5292b9fe4995fc5d3f44.css" integrity="" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://nexus949.github.io/Devlog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://nexus949.github.io/Devlog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://nexus949.github.io/Devlog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://nexus949.github.io/Devlog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://nexus949.github.io/Devlog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://nexus949.github.io/Devlog/posts/javascript/js_pitfalls/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://nexus949.github.io/Devlog/posts/javascript/js_pitfalls/">
+  <meta property="og:site_name" content="Devlog">
+  <meta property="og:title" content="JavaScript Pitfalls">
+  <meta property="og:description" content="We will see some other quirks and pitfalls here
+[object Object] We can get the [object Object] if we try to console log a object while trying to concat a string with it.
+const obj = { val: 32 }; console.log(obj); //prints { val: 32 } console.log(obj &#43; &#39;A&#39;); //prints [object Object]A Internally JS tries to convert obj into a string by doing obj.toString() resulting in [object Object] !
+Now what exactly does it mean ?
+The first is object (with a small o), this shows the type tag. JavaScript by default tags every datatype as objectif its not a primitive type like number or string.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-07-12T14:28:16+05:30">
+    <meta property="article:modified_time" content="2025-07-12T14:28:16+05:30">
+    <meta property="article:tag" content="JavaScript">
+    <meta property="article:tag" content="Quirky JS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript Pitfalls">
+<meta name="twitter:description" content="We will see some other quirks and pitfalls here
+[object Object]
+We can get the [object Object] if we try to console log a object while trying to concat a string with it.
+const obj = { val: 32 };
+
+console.log(obj); //prints { val: 32 }
+console.log(obj &#43; &#39;A&#39;); //prints [object Object]A
+Internally JS tries to convert obj into a string by doing obj.toString() resulting in [object Object] !
+Now what exactly does it mean ?
+The first is object (with a small o), this shows the type tag. JavaScript by default tags every datatype as objectif its not a primitive type like number or string.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://nexus949.github.io/Devlog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "JavaScript Pitfalls",
+      "item": "https://nexus949.github.io/Devlog/posts/javascript/js_pitfalls/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "JavaScript Pitfalls",
+  "name": "JavaScript Pitfalls",
+  "description": "We will see some other quirks and pitfalls here\n[object Object] We can get the [object Object] if we try to console log a object while trying to concat a string with it.\nconst obj = { val: 32 }; console.log(obj); //prints { val: 32 } console.log(obj + \u0026#39;A\u0026#39;); //prints [object Object]A Internally JS tries to convert obj into a string by doing obj.toString() resulting in [object Object] !\nNow what exactly does it mean ?\nThe first is object (with a small o), this shows the type tag. JavaScript by default tags every datatype as objectif its not a primitive type like number or string.\n",
+  "keywords": [
+    "JavaScript", "Quirky JS"
+  ],
+  "articleBody": "We will see some other quirks and pitfalls here\n[object Object] We can get the [object Object] if we try to console log a object while trying to concat a string with it.\nconst obj = { val: 32 }; console.log(obj); //prints { val: 32 } console.log(obj + 'A'); //prints [object Object]A Internally JS tries to convert obj into a string by doing obj.toString() resulting in [object Object] !\nNow what exactly does it mean ?\nThe first is object (with a small o), this shows the type tag. JavaScript by default tags every datatype as objectif its not a primitive type like number or string.\nThe second one is Object (with a capital O), this is the constructor name of the object.\nAnd yes array is a type of object ! Anything not primitive is a type of object;\nconst arr = [1, 2, 3, 4, 5]; const str = \"Nexus\"; console.log(typeof arr); //prints object console.log(typeof str); //prints string String is a primitive type in JS but array is not, therefore array is a type of object !\nCoercion in JavaScript (Implicit Type Conversion) If there is a type mismatch JS will automatically convert the types as necessary implicitly without telling the user.\n{} + [] console.log({} + []); //prints [object Object] This is [object Object] because [] is an empty array, JS converts it to a string which results in an empty string i.e. [] becomes \"\" this ! Now {} is an empty object, similar to the array JS converts it too to a string, and we already saw what happens if we convert an object to a string, it becomes [object Object]. Therefore, the whole expression becomes \"\" + [object Object] resulting in [object Object].\n[] + [] console.log([] + []); //prints \"\" \u003c- nothing (empty string) This results in an empty string (\"\") ! As discussed before JS converts an empty array ([]) to string which results in an empty string (\"\"), therefore the whole expression becomes \"\" + \"\" which results in a \"\" (empty string). Nothing is logged on the console.\n{} + {} console.log({} + {}); //prints [object Object][object Object] This results in [object Object][object Object] ! Same logic, an empty object converted to string results in [object Object] and the whole expression becomes [object Object] + [object Object] which results in [object Object][object Object] !\n'5' + 1 = 51 but '5' - 1 = 4 (YEP THATS THE FAMOUS MEME ON JS) ! This is also result of corec……very hard to spell, I will just say implicit conversion its way easier ! Anyways, lets see this in action !\nconsole.log('5' + 1); //prints 51 console.log('5' - 1); //prints 4 If + is applied and either side is a string, JS will implicitly convert everything to string and perform concatenation ! '5' + 1 ? 1 is converted to a string and concatenated to '5' resulting in 51.\nBut on the other hand, if there is -, * or /, JS will convert the string into a number and perform arithmetic operation. In our case '5' - 1, '5' gets converted into a number and then it substract 1 from it, the result is a number i.e. 4 !\n😩 I HATE JS SO MUCH !\nBefore moving on lets see some more number coercion:\nconsole.log('5' + '2' + '1'); //521 (string) console.log(true + '5'); //true5 (string) console.log(true + true + '5'); // 25 (string) [true + true = 1 + 1 = 2 then 2 + '5' = \"25\"] console.log('5' * '2' + '1'); //101 (string) [5 * 2 = 10 + '1' = \"101\"] console.log('5' * '2' + 1); //11 (number) [5 * 2 = 10 + 1 = 11] console.log('5' - true); //4 (number) [5 - 1 = 4] console.log(1 + 2 + '5'); //35 (string) [1 + 2 = 3 then 3 + '5' = \"35\"] == vs === Loose Equality vs Strict Equality Loose Equality (==) : tries to implicit convert and equate values. Lets see through example:\nconsole.log('5' == 5); //true console.log(false == 0); //true console.log(null == undefined); //true console.log([] == false); //true console.log([] == 0); //true Implicitly converts values (coercion) and equates them. Not the ideal kind of equality operator.\nStrict Equality (===) : Matches for exact values without type conversion ! The “yes you will use this one” type of operator. Unlike loose equality, it does not tries to implicitly convert types. It checks for exact value and type too ! console.log('5' === 5); //false console.log(false === 0); //false console.log(null === undefined); //false console.log([] === false); //false console.log([] === 0); //false console.log(5 === 5); //true NGL I don’t know a single scene where I will use == instead of ===.\ntypeof null === \"object\" is true LONG STORY SHORT : ITS A BUG ! 🐞 , In the creation of JavaScript this was a bug which when found later was not fixed because fixing it will cause codebases to cause issues who are using this.\nNaN === NaN is false NaN stands for “Not a Number” ! But…\nconsole.log(typeof NaN); //number NaN shows up when something meaningless or invalid happens like:\n0 / 0; //NaN undefined + 1; //NaN \"xyz\" / 2; //NaN According to the IEEE 754 standard, NaN is not equal to any value even itself. NaN represents an invalid or un-representable number. Therefore its like saying “NaN === NaN, these 2 NaNs can be any type of invalid, I don’t know if they are equal or not”.\nWhy typeof NaN === number is true ? JavaScript uses IEEE 754 standard for all its numeric types. An int is a number and a float too is a number.\nSo is NaN part of this system but representing it is pointless according to JS ! At this point even I am confused what I am doing with my life documenting this !\nLong story short NaN is a number because its in the same numeric system JS uses but its not representable !\n[1] + [2] = 12 Why ? Same core…..coeri…..IMPLICIT TYPE CONVERSION ! I could never get that to spell right !\nAnyways very simple, JS sees [1] and [2], it says lemme convert them to string and we get \"12\" ! That’s it !\nFew more examples:\n[1,2] + [3,4] // \"1,23,4\" [10] + 5 // \"105\" [true] + [false] // \"truefalse\" [{}] + [] // \"[object Object]\" FINAL THOUGHTS I know JS, this is just the tip of the ICE-BERG, there must be many more quirks apart from these but this is all I have got, at least for now…\nCheck out other JS quirks here: Qurik Index\n",
+  "wordCount" : "1110",
+  "inLanguage": "en",
+  "datePublished": "2025-07-12T14:28:16+05:30",
+  "dateModified": "2025-07-12T14:28:16+05:30",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://nexus949.github.io/Devlog/posts/javascript/js_pitfalls/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Devlog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://nexus949.github.io/Devlog/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://nexus949.github.io/Devlog/" accesskey="h" title="Devlog (Alt + H)">Devlog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://github.com/nexus949" title="Github">
+                    <span>Github</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://nexus949.github.io/Devlog/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      JavaScript Pitfalls
+    </h1>
+    <div class="post-meta"><span title='2025-07-12 14:28:16 +0530 IST'>July 12, 2025</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>We will see some other quirks and pitfalls here</p>
+<h3 id="object-object"><code>[object Object]</code><a hidden class="anchor" aria-hidden="true" href="#object-object">#</a></h3>
+<p>We can get the <code>[object Object]</code> if we try to console log a object while trying to concat a string with it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">32</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">obj</span>); <span style="color:#75715e">//prints { val: 32 }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">obj</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;A&#39;</span>); <span style="color:#75715e">//prints [object Object]A
+</span></span></span></code></pre></div><p>Internally JS tries to convert <code>obj</code> into a string by doing <code>obj.toString()</code> resulting in <code>[object Object]</code> !</p>
+<p>Now what exactly does it mean ?</p>
+<p>The first is <code>object</code> (with a small <code>o</code>), this shows the type tag. JavaScript by default tags every datatype as <code>object</code>if its not a primitive type like <code>number</code> or <code>string</code>.</p>
+<p>The second one is <code>Object</code> (with a capital <code>O</code>), this is the <strong>constructor name</strong> of the object.</p>
+<p>And yes <code>array</code> is a type of object ! Anything not primitive is a type of object;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Nexus&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">arr</span>); <span style="color:#75715e">//prints object
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">str</span>); <span style="color:#75715e">//prints string
+</span></span></span></code></pre></div><p>String is a primitive type in JS but array is not, therefore array is a type of object !</p>
+<hr>
+<h3 id="coercion-in-javascript-implicit-type-conversion">Coercion in JavaScript (Implicit Type Conversion)<a hidden class="anchor" aria-hidden="true" href="#coercion-in-javascript-implicit-type-conversion">#</a></h3>
+<p>If there is a type mismatch JS will automatically convert the types as necessary implicitly without telling the user.</p>
+<ol>
+<li><code>{} + []</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>({} <span style="color:#f92672">+</span> []); <span style="color:#75715e">//prints [object Object]
+</span></span></span></code></pre></div><p>This is <code>[object Object]</code> because <code>[]</code> is an empty array, JS converts it to a string which results in an empty string i.e. <code>[]</code> becomes <code>&quot;&quot;</code> this ! Now <code>{}</code> is an empty object, similar to the array JS converts it too to a string, and we already saw what happens if we convert an object to a string, it becomes <code>[object Object]</code>. Therefore, the whole expression becomes <code>&quot;&quot; + [object Object]</code> resulting in <code>[object Object]</code>.</p>
+<ol start="2">
+<li><code>[] + []</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>([] <span style="color:#f92672">+</span> []); <span style="color:#75715e">//prints &#34;&#34; &lt;- nothing (empty string)
+</span></span></span></code></pre></div><p>This results in an empty string (<code>&quot;&quot;</code>) ! As discussed before JS converts an empty array (<code>[]</code>) to string which results in an empty string (<code>&quot;&quot;</code>), therefore the whole expression becomes <code>&quot;&quot; + &quot;&quot;</code> which results in a <code>&quot;&quot;</code> (empty string). Nothing is logged on the console.</p>
+<ol start="3">
+<li><code>{} + {}</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>({} <span style="color:#f92672">+</span> {}); <span style="color:#75715e">//prints [object Object][object Object]
+</span></span></span></code></pre></div><p>This results in <code>[object Object][object Object]</code> ! Same logic, an empty object converted to string results in <code>[object Object]</code> and the whole expression becomes <code>[object Object] + [object Object]</code> which results in <code>[object Object][object Object]</code> !</p>
+<ol start="4">
+<li><code>'5' + 1 = 51</code> but <code>'5' - 1 = 4</code> (YEP THATS THE FAMOUS MEME ON JS) !</li>
+</ol>
+<p>This is also result of corec&hellip;&hellip;very hard to spell, I will just say implicit conversion its way easier ! Anyways, lets see this in action !</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;5&#39;</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>); <span style="color:#75715e">//prints 51
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;5&#39;</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>); <span style="color:#75715e">//prints 4
+</span></span></span></code></pre></div><p><strong>If <code>+</code> is applied and either side is a string</strong>, JS will implicitly convert everything to string and perform concatenation ! <code>'5' + 1</code> ? <code>1</code> is converted to a string and concatenated to <code>'5'</code> resulting in <code>51</code>.</p>
+<p>But on the other hand, if there is <code>-</code>, <code>*</code> or <code>/</code>, JS will convert the string into a number and perform arithmetic operation. In our case <code>'5' - 1</code>, <code>'5'</code> gets converted into a number and then it substract 1 from it, the result is a number i.e. 4 !</p>
+<p>😩 <em><strong>I HATE JS SO MUCH !</strong></em></p>
+<p>Before moving on lets see some more number coercion:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;5&#39;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;2&#39;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;1&#39;</span>); <span style="color:#75715e">//521 (string)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">true</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;5&#39;</span>); <span style="color:#75715e">//true5 (string)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">true</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">true</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;5&#39;</span>); <span style="color:#75715e">// 25 (string) [true + true = 1 + 1 = 2 then 2 + &#39;5&#39; = &#34;25&#34;]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;5&#39;</span> <span style="color:#f92672">*</span> <span style="color:#e6db74">&#39;2&#39;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;1&#39;</span>); <span style="color:#75715e">//101 (string) [5 * 2 = 10 + &#39;1&#39; = &#34;101&#34;]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;5&#39;</span> <span style="color:#f92672">*</span> <span style="color:#e6db74">&#39;2&#39;</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>); <span style="color:#75715e">//11 (number) [5 * 2 = 10 + 1 = 11]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;5&#39;</span> <span style="color:#f92672">-</span> <span style="color:#66d9ef">true</span>); <span style="color:#75715e">//4 (number) [5 - 1 = 4]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;5&#39;</span>); <span style="color:#75715e">//35 (string) [1 + 2 = 3 then 3 + &#39;5&#39; = &#34;35&#34;]
+</span></span></span></code></pre></div><hr>
+<h3 id="-vs--loose-equality-vs-strict-equality"><code>== vs ===</code> Loose Equality vs Strict Equality<a hidden class="anchor" aria-hidden="true" href="#-vs--loose-equality-vs-strict-equality">#</a></h3>
+<ul>
+<li>Loose Equality (<code>==</code>) : tries to implicit convert and equate values.</li>
+</ul>
+<p>Lets see through example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;5&#39;</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">5</span>); <span style="color:#75715e">//true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">false</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>); <span style="color:#75715e">//true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">null</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span>); <span style="color:#75715e">//true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>([] <span style="color:#f92672">==</span> <span style="color:#66d9ef">false</span>); <span style="color:#75715e">//true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>([] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>); <span style="color:#75715e">//true
+</span></span></span></code></pre></div><p>Implicitly converts values (coercion) and equates them. Not the ideal kind of equality operator.</p>
+<ul>
+<li>Strict Equality (<code>===</code>) : Matches for exact values without type conversion ! The &ldquo;yes you will use this one&rdquo; type of operator. Unlike loose equality, it does not tries to implicitly convert types. It checks for exact value and type too !</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;5&#39;</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">5</span>); <span style="color:#75715e">//false
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">false</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>); <span style="color:#75715e">//false
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">null</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span>); <span style="color:#75715e">//false
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>([] <span style="color:#f92672">===</span> <span style="color:#66d9ef">false</span>); <span style="color:#75715e">//false
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>([] <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>); <span style="color:#75715e">//false
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#ae81ff">5</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">5</span>); <span style="color:#75715e">//true
+</span></span></span></code></pre></div><p>NGL I don&rsquo;t know a single scene where I will use <code>==</code> instead of <code>===</code>.</p>
+<hr>
+<h3 id="typeof-null--object-is-true"><code>typeof null === &quot;object&quot;</code> is <code>true</code><a hidden class="anchor" aria-hidden="true" href="#typeof-null--object-is-true">#</a></h3>
+<p>LONG STORY SHORT : <em><strong>ITS A BUG !</strong></em> 🐞 , In the creation of JavaScript this was a bug which when found later was not fixed because fixing it will cause codebases to cause issues who are using this.</p>
+<hr>
+<h3 id="nan--nan-is-false"><code>NaN === NaN</code> is <code>false</code><a hidden class="anchor" aria-hidden="true" href="#nan--nan-is-false">#</a></h3>
+<p><code>NaN</code> stands for &ldquo;Not a Number&rdquo; ! But&hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">typeof</span> <span style="color:#66d9ef">NaN</span>); <span style="color:#75715e">//number
+</span></span></span></code></pre></div><p><code>NaN</code> shows up when something meaningless or invalid happens like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#ae81ff">0</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">//NaN
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">undefined</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; <span style="color:#75715e">//NaN
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#e6db74">&#34;xyz&#34;</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">//NaN
+</span></span></span></code></pre></div><p>According to the IEEE 754 standard, <code>NaN</code> is not equal to any value even itself. <code>NaN</code> represents an invalid or un-representable number. Therefore its like saying &ldquo;<code>NaN === NaN</code>, these 2 <code>NaN</code>s can be any type of invalid, I don&rsquo;t know if they are equal or not&rdquo;.</p>
+<h4 id="why-typeof-nan--number-is-true-">Why <code>typeof NaN === number</code> is <code>true</code> ?<a hidden class="anchor" aria-hidden="true" href="#why-typeof-nan--number-is-true-">#</a></h4>
+<p>JavaScript uses IEEE 754 standard for all its numeric types. An <code>int</code> is a <code>number</code> and a <code>float</code> too is a <code>number</code>.</p>
+<p>So is <code>NaN</code> part of this system but representing it is pointless according to JS ! At this point even I am confused what I am doing with my life documenting this !</p>
+<p>Long story short <code>NaN</code> is a <code>number</code> because its in the same numeric system JS uses but its not representable !</p>
+<hr>
+<h3 id="1--2--12"><code>[1] + [2]</code> = <code>12</code><a hidden class="anchor" aria-hidden="true" href="#1--2--12">#</a></h3>
+<p>Why ? Same core&hellip;..coeri&hellip;..IMPLICIT TYPE CONVERSION ! I could never get that to spell right !</p>
+<p>Anyways very simple, JS sees <code>[1]</code> and <code>[2]</code>, it says lemme convert them to string and we get <code>&quot;12&quot;</code> ! That&rsquo;s it !</p>
+<p>Few more examples:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>] <span style="color:#f92672">+</span> [<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>]     <span style="color:#75715e">// &#34;1,23,4&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>[<span style="color:#ae81ff">10</span>] <span style="color:#f92672">+</span> <span style="color:#ae81ff">5</span>          <span style="color:#75715e">// &#34;105&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>[<span style="color:#66d9ef">true</span>] <span style="color:#f92672">+</span> [<span style="color:#66d9ef">false</span>]  <span style="color:#75715e">// &#34;truefalse&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>[{}] <span style="color:#f92672">+</span> []         <span style="color:#75715e">// &#34;[object Object]&#34;
+</span></span></span></code></pre></div><hr>
+<h2 id="final-thoughts">FINAL THOUGHTS<a hidden class="anchor" aria-hidden="true" href="#final-thoughts">#</a></h2>
+<p>I know JS, this is just the tip of the ICE-BERG, there must be many more quirks apart from these but this is all I have got, at least for now&hellip;</p>
+<p>Check out other JS quirks here:
+<a href="https://nexus949.github.io/Devlog/posts/javascript/javascript-quirks">Qurik Index</a></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://nexus949.github.io/Devlog/tags/javascript/">JavaScript</a></li>
+      <li><a href="https://nexus949.github.io/Devlog/tags/quirky-js/">Quirky JS</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://nexus949.github.io/Devlog/">Devlog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

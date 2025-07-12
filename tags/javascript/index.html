@@ -137,6 +137,52 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">var vs let vs const
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>No fluff lets get directly into it !
+var vs let vs const Declaration var : Can be re-declared even after declaring it once ! let : Cannot be re-declared ! Only one declaration per block ! const : Same as let ! Mutability var : Mutable. Means will let you change values of variables, let : Mutable. Same as var will let you change values of variables. const : Immutable. Won’t let you change values of variables declared using const ! Scopes var: Function Scoped ! function scopeOfVar(){ var x = 8; console.log(x); } scopeOfVar(); console.log(x); //ReferenceError: x is not defined x is defined inside the function, hoisted to the top of the scope (the function in this case) and is not accessible outside of the function.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-07-12 15:16:37 +0530 IST'>July 12, 2025</span></footer>
+  <a class="entry-link" aria-label="post link to var vs let vs const" href="https://nexus949.github.io/Devlog/posts/javascript/var_vs_let_vs_const/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Hoisting in Javascript
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Hoisting in JavaScript means that any declaration made, JavaScript will move them to the top of their scope before the code runs.
+📦 Two types of Hoisting in JavaScript Variable Hoisting : Lets see using examples:
+console.log(x); //undefined var x = 8; console.log(x); //prints 8 Instead of throwing an error it runs as x is hoisted to the top of the scope therefore its not initialized before the code runs but its declared therefore x is accessible. x is initialized when the line var x = 8 is executed.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-07-12 14:34:33 +0530 IST'>July 12, 2025</span></footer>
+  <a class="entry-link" aria-label="post link to Hoisting in Javascript" href="https://nexus949.github.io/Devlog/posts/javascript/hoisting-in-javascript/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">JavaScript Pitfalls
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>We will see some other quirks and pitfalls here
+[object Object] We can get the [object Object] if we try to console log a object while trying to concat a string with it.
+const obj = { val: 32 }; console.log(obj); //prints { val: 32 } console.log(obj &#43; &#39;A&#39;); //prints [object Object]A Internally JS tries to convert obj into a string by doing obj.toString() resulting in [object Object] !
+Now what exactly does it mean ?
+The first is object (with a small o), this shows the type tag. JavaScript by default tags every datatype as objectif its not a primitive type like number or string.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-07-12 14:28:16 +0530 IST'>July 12, 2025</span></footer>
+  <a class="entry-link" aria-label="post link to JavaScript Pitfalls" href="https://nexus949.github.io/Devlog/posts/javascript/js_pitfalls/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Javascript Functions
     </h2>
   </header>

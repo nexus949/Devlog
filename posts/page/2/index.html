@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Tags | Devlog</title>
+<title>Posts | Devlog</title>
 <meta name="keywords" content="">
-<meta name="description" content="">
+<meta name="description" content="Posts - Devlog">
 <meta name="author" content="">
-<link rel="canonical" href="https://nexus949.github.io/Devlog/tags/">
+<link rel="canonical" href="https://nexus949.github.io/Devlog/posts/">
 <link crossorigin="anonymous" href="/Devlog/assets/css/stylesheet.653123a0ea74d41f2a457a31eed7257fccf817e8ddcf5292b9fe4995fc5d3f44.css" integrity="" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://nexus949.github.io/Devlog/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://nexus949.github.io/Devlog/favicon-16x16.png">
@@ -18,8 +18,8 @@
 <link rel="mask-icon" href="https://nexus949.github.io/Devlog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://nexus949.github.io/Devlog/tags/index.xml">
-<link rel="alternate" hreflang="en" href="https://nexus949.github.io/Devlog/tags/">
+<link rel="alternate" type="application/rss+xml" href="https://nexus949.github.io/Devlog/posts/index.xml">
+<link rel="alternate" hreflang="en" href="https://nexus949.github.io/Devlog/posts/">
 <noscript>
     <style>
         #theme-toggle,
@@ -56,15 +56,30 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="https://nexus949.github.io/Devlog/tags/">
+</noscript><meta property="og:url" content="https://nexus949.github.io/Devlog/posts/">
   <meta property="og:site_name" content="Devlog">
-  <meta property="og:title" content="Tags">
+  <meta property="og:title" content="Posts">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tags">
+<meta name="twitter:title" content="Posts">
 <meta name="twitter:description" content="">
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://nexus949.github.io/Devlog/posts/"
+    }
+  ]
+}
+</script>
 </head>
 
 <body class="list" id="top"><link rel="preconnect" href="https://fonts.googleapis.com">
@@ -122,31 +137,55 @@
             </li>
             <li>
                 <a href="https://nexus949.github.io/Devlog/tags/" title="Tags">
-                    <span class="active">Tags</span>
+                    <span>Tags</span>
                 </a>
             </li>
         </ul>
     </nav>
 </header>
-<main class="main">
+<main class="main"> 
 <header class="page-header">
-    <h1>Tags</h1>
+  <h1>
+    Posts
+  </h1>
 </header>
 
-<ul class="terms-tags">
-    <li>
-        <a href="https://nexus949.github.io/Devlog/tags/c&#43;&#43;/">C&#43;&#43; <sup><strong><sup>4</sup></strong></sup> </a>
-    </li>
-    <li>
-        <a href="https://nexus949.github.io/Devlog/tags/hugo/">Hugo <sup><strong><sup>2</sup></strong></sup> </a>
-    </li>
-    <li>
-        <a href="https://nexus949.github.io/Devlog/tags/javascript/">JavaScript <sup><strong><sup>6</sup></strong></sup> </a>
-    </li>
-    <li>
-        <a href="https://nexus949.github.io/Devlog/tags/quirky-js/">Quirky JS <sup><strong><sup>4</sup></strong></sup> </a>
-    </li>
-</ul>
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Reinterpret_Cast
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>What is reinterpret cast&lt;&gt; ? Just like type casting (char)int, which reinterprets the value numerically here:
+int x = 65; std::cout &lt;&lt; (char)x &lt;&lt; std::endl; //prints character &#39;A&#39; as 65 is the ascii code for &#39;A&#39;. //OR std::cout &lt;&lt; static_cast&lt;char&gt;(x) &lt;&lt; std::endl; //C&#43;&#43; style Similarly reinterpret casts works on pointers !
+Specific type of pointers can read specific type of data. Means a int pointer will read 4 bytes of data at a time whereas a char pointer reads 1 byte of data at a time.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-07-05 17:56:32 +0530 IST'>July 5, 2025</span></footer>
+  <a class="entry-link" aria-label="post link to Reinterpret_Cast" href="https://nexus949.github.io/Devlog/posts/cpp/reinterpret_cast/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Deep understanding of Pointers and Pointer pitfall
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Pointers are easy ? Or are they ? Pointers are pretty easy to use and understand unless we fall in deep dereferencing and more complex topics like array of pointers and multiple dereferences and incrementing or decrementing them.
+Basic Pointer use:
+int a = 3; int* ptr = &amp;a; std::cout &lt;&lt; a &lt;&lt; std::endl; //prints value of a std::cout &lt;&lt; &amp;a &lt;&lt; std::endl; //prints address of a std::cout &lt;&lt; ptr &lt;&lt; std::endl; //also prints address of a std::cout &lt;&lt; *ptr &lt;&lt; std::endl; //prints value of a Now lets go a little deep using pointer to a pointer.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-07-05 17:51:59 +0530 IST'>July 5, 2025</span></footer>
+  <a class="entry-link" aria-label="post link to Deep understanding of Pointers and Pointer pitfall" href="https://nexus949.github.io/Devlog/posts/cpp/deep_understanding_of_pointers_and_pointer_pitfall/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://nexus949.github.io/Devlog/posts/">
+      «&nbsp;Prev&nbsp;
+    </a>
+  </nav>
+</footer>
     </main>
     
 <footer class="footer">

@@ -6,8 +6,24 @@
     <description>Recent content in Quirky JS on Devlog</description>
     <generator>Hugo -- 0.147.9</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Jul 2025 00:16:31 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 12 Jul 2025 14:28:16 +0530</lastBuildDate>
     <atom:link href="https://nexus949.github.io/Devlog/tags/quirky-js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript Pitfalls</title>
+      <link>https://nexus949.github.io/Devlog/posts/javascript/js_pitfalls/</link>
+      <pubDate>Sat, 12 Jul 2025 14:28:16 +0530</pubDate>
+      <guid>https://nexus949.github.io/Devlog/posts/javascript/js_pitfalls/</guid>
+      <description>&lt;p&gt;We will see some other quirks and pitfalls here&lt;/p&gt;
+&lt;h3 id=&#34;object-object&#34;&gt;&lt;code&gt;[object Object]&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;We can get the &lt;code&gt;[object Object]&lt;/code&gt; if we try to console log a object while trying to concat a string with it.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;obj&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;val&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;32&lt;/span&gt; };
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;obj&lt;/span&gt;); &lt;span style=&#34;color:#75715e&#34;&gt;//prints { val: 32 }
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;obj&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;); &lt;span style=&#34;color:#75715e&#34;&gt;//prints [object Object]A
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Internally JS tries to convert &lt;code&gt;obj&lt;/code&gt; into a string by doing &lt;code&gt;obj.toString()&lt;/code&gt; resulting in &lt;code&gt;[object Object]&lt;/code&gt; !&lt;/p&gt;
+&lt;p&gt;Now what exactly does it mean ?&lt;/p&gt;
+&lt;p&gt;The first is &lt;code&gt;object&lt;/code&gt; (with a small &lt;code&gt;o&lt;/code&gt;), this shows the type tag. JavaScript by default tags every datatype as &lt;code&gt;object&lt;/code&gt;if its not a primitive type like &lt;code&gt;number&lt;/code&gt; or &lt;code&gt;string&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Javascript Functions</title>
       <link>https://nexus949.github.io/Devlog/posts/javascript/javascript-functions/</link>
