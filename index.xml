@@ -58,9 +58,9 @@
     </item>
     <item>
       <title>JavaScript Pitfalls</title>
-      <link>https://nexus949.github.io/Devlog/posts/javascript/js_pitfalls/</link>
+      <link>https://nexus949.github.io/Devlog/posts/javascript/javascript-pitfalls/</link>
       <pubDate>Sat, 12 Jul 2025 14:28:16 +0530</pubDate>
-      <guid>https://nexus949.github.io/Devlog/posts/javascript/js_pitfalls/</guid>
+      <guid>https://nexus949.github.io/Devlog/posts/javascript/javascript-pitfalls/</guid>
       <description>&lt;p&gt;We will see some other quirks and pitfalls here&lt;/p&gt;
 &lt;h3 id=&#34;object-object&#34;&gt;&lt;code&gt;[object Object]&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;We can get the &lt;code&gt;[object Object]&lt;/code&gt; if we try to console log a object while trying to concat a string with it.&lt;/p&gt;
